@@ -1,0 +1,483 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Android Appium使用手册 | Treasure</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.4.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../../public/bigfootprint/Volley杂谈/Volley杂谈.html" />
+    
+    
+    <link rel="prev" href="../../../public/bequietlee/high_memory_analyze/high_memory_analyze.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="5" data-basepath="../../.." data-revision="Tue Sep 22 2015 19:31:37 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="public/lightsky/mat_usage/mat_usage.html">
+            
+                
+                    <a href="../../../public/lightsky/mat_usage/mat_usage.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        MAT使用进阶
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="public/lockerlou/android_robotium/android_robotium.html">
+            
+                
+                    <a href="../../../public/lockerlou/android_robotium/android_robotium.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Android Robotium使用手册
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="public/sim/Android如何使用蓝牙打印机/Android如何使用蓝牙打印机.html">
+            
+                
+                    <a href="../../../public/sim/Android如何使用蓝牙打印机/Android如何使用蓝牙打印机.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Android如何使用蓝牙打印机
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="public/bequietlee/high_memory_analyze/high_memory_analyze.html">
+            
+                
+                    <a href="../../../public/bequietlee/high_memory_analyze/high_memory_analyze.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        记一次Android内存分析过程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5" data-path="public/qsqqinsao/android_appium/android_appium.html">
+            
+                
+                    <a href="../../../public/qsqqinsao/android_appium/android_appium.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Android Appium使用手册
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="public/bigfootprint/Volley杂谈/Volley杂谈.html">
+            
+                
+                    <a href="../../../public/bigfootprint/Volley杂谈/Volley杂谈.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Volley杂谈
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="public/sim/Android性能分析方法简介/Android性能分析方法简介.html">
+            
+                
+                    <a href="../../../public/sim/Android性能分析方法简介/Android性能分析方法简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Android性能分析方法简介
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../" >Treasure</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h3 id="android-appium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8C%87%E5%AF%BC%E6%89%8B%E5%86%8C">Android Appium&#x81EA;&#x52A8;&#x5316;&#x6D4B;&#x8BD5;&#x6307;&#x5BFC;&#x624B;&#x518C;</h3>
+<h4 id="%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">&#x73AF;&#x5883;&#x914D;&#x7F6E;</h4>
+<p>mac&#x4E0B;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#xFF1A;<a href="http://www.cnblogs.com/oscarxie/p/3894559.html" target="_blank">http://www.cnblogs.com/oscarxie/p/3894559.html</a>
+windows&#x4E0B;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E3B;&#x8981;&#x662F;JDK&#x3001;AndroidSDK&#x914D;&#x7F6E;&#xFF0C;&#x7565;</p>
+<h4 id="%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE">&#x65B0;&#x5EFA;&#x9879;&#x76EE;</h4>
+<p>&#x672C;&#x6B21;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x7528;java&#x6765;&#x5199;appium&#x81EA;&#x52A8;&#x5316;case&#xFF0C;&#x6D4B;&#x8BD5;&#x9879;&#x76EE;&#x642D;&#x5EFA;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;
+1.&#x4F7F;&#x7528;eclipse/intellij&#x65B0;&#x5EFA;java project
+2.&#x62F7;&#x8D1D;&#x4E09;&#x4E2A;&#x57FA;&#x7840;jar&#x5305;&#x81F3;libs&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;jar&#x5305;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#xFF1A;java-client-3.1.0.jar&#x3001;junit-            4.7.jar&#x3001;selenium-server-standalone-2.46.0.jar&#xFF0C;&#x5404;&#x5305;&#x5747;&#x62FF;&#x6700;&#x65B0;&#x7248;&#x672C;&#x5373;&#x53EF;
+3.&#x65B0;&#x5EFA;testcase&#x5373;&#x53EF;&#xFF0C;&#x4F7F;&#x7528;junit&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x6D4B;&#x8BD5;case&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>public class TakeScreenShotDemo {
+    private AppiumDriver driver;
+
+    @Before
+    // &#x521D;&#x59CB;&#x5316;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;
+    public void setUp() throws Exception {
+        driver = (AppiumDriver)SingletonDriver.getDriverInstance();
+    }
+
+    @After
+    // &#x540E;&#x7F6E;&#x64CD;&#x4F5C;
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+
+    @Test
+    public void demoTest() throws InterruptedException {
+        NovaTestUtils.openApp(driver);
+
+        //&#x622A;&#x5C4F;
+        NovaTestUtils.takeScreenShot(driver, &quot;/Users/horizon/Downloads/&quot;);
+
+        //&#x67E5;&#x627E;&#x5143;&#x7D20;
+        WebElement el = driver.findElementByName(&quot;&#x4E0A;&#x6D77;&quot;);
+
+        //&#x65AD;&#x8A00;
+        assertThat(el.getText(), equalTo(&quot;&#x4E0A;&#x6D77;&quot;));
+
+        // &#x7B49;&#x5F85;&#x63A7;&#x4EF6;&#x51FA;&#x73B0;
+        WebElement e1 = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfElementLocated(By.name(&quot;&#x4E0A;&#x6D77;&quot;)));
+
+        // &#x7B49;&#x5F85;&#x63A7;&#x4EF6;&#x51FA;&#x73B0;&#xFF0C;&#x5E76;&#x83B7;&#x53D6;&#x63A7;&#x4EF6;
+        WebElement e = (new WebDriverWait(driver, 10)).until(new ExpectedCondition&lt;WebElement&gt;() {
+            @Override
+            public WebElement apply(WebDriver d) {
+            return d.findElement(By.id(&quot;&#x4E0A;&#x6D77;&quot;));
+            }
+           });
+
+    }
+}
+</code></pre><h4 id="appium-driver%E9%85%8D%E7%BD%AE">appium driver&#x914D;&#x7F6E;</h4>
+<pre><code>public static WebDriver getDriverInstance() throws MalformedURLException {
+    if (singletonDriver == null) {
+        // set up appium
+        File classpathRoot = new File(System.getProperty(&quot;user.dir&quot;));
+        // &#x5B58;&#x653E;app&#x76EE;&#x5F55;&#xFF1A;apps
+        File appDir = new File(classpathRoot, &quot;apps&quot;);
+        File app = new File(appDir, &quot;Nova-common-debug.apk&quot;);
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(&quot;deviceName&quot;, &quot;192.168.57.101&quot;);
+        // capabilities.setCapability(CapabilityType.BROWSER_NAME, &quot;&quot;);
+        // &#x6A21;&#x62DF;&#x5668;&#x7684;&#x5B89;&#x5353;&#x7248;&#x672C;&#x662F;4.4
+        capabilities.setCapability(CapabilityType.VERSION, &quot;4.4&quot;);
+        capabilities.setCapability(&quot;platformName&quot;, &quot;Android&quot;);
+        //&#x8BA9;appium&#x652F;&#x6301;&#x8F93;&#x5165;&#x4E2D;&#x6587;
+        capabilities.setCapability(&quot;unicodeKeyboard&quot;, &quot;True&quot;);
+        capabilities.setCapability(&quot;resetKeyboard&quot;, &quot;True&quot;);
+
+        capabilities.setCapability(&quot;app&quot;, app.getAbsolutePath());
+        capabilities.setCapability(&quot;app-package&quot;, &quot;com.dianping.v1&quot;);
+        // capabilities.setCapability(&quot;app-activity&quot;,
+        // &quot;.activity.MainActivity&quot;);
+        singletonDriver = new AppiumDriver(new URL(&quot;http://127.0.0.1:4723/wd/hub&quot;),
+                capabilities) {
+            @Override
+            public WebElement scrollTo(String s) {
+                return null;
+            }
+
+            @Override
+            public WebElement scrollToExact(String s) {
+                return null;
+            }
+        };
+    }
+
+    return singletonDriver;
+}
+</code></pre><h4 id="%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95">&#x5E38;&#x7528;&#x65B9;&#x6CD5;</h4>
+<p>1.&#x901A;&#x8FC7;id&#x3001;name&#x7B49;&#x67E5;&#x627E;&#x63A7;&#x4EF6;(&#x5305;&#x62EC;listview&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3001;dialog&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x7EDF;&#x4E00;&#x53EF;&#x4F7F;&#x7528;&#x6B64;&#x65B9;&#x5F0F;&#x67E5;&#x627E;)</p>
+<pre><code>WebElement url = driver.findElement(By.id(&quot;com.dianping.v1:id/text_url&quot;));
+url.sendKeys(UrlScheme);
+
+WebElement mock = driver.findElement(By.name(&quot;mock&quot;));
+mock.click();
+</code></pre><p>2.&#x70B9;&#x51FB;&#x63A7;&#x4EF6;</p>
+<pre><code>WebElement mock = driver.findElement(By.name(&quot;mock&quot;));
+mock.click();
+</code></pre><p>3.&#x7B49;&#x5F85;&#x63A7;&#x4EF6;&#x51FA;&#x73B0;</p>
+<pre><code>WebElement e1 = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfElementLocated(By.name(&quot;&#x4E0A;&#x6D77;&quot;)));
+</code></pre><p>4.&#x7B49;&#x5F85;&#x63A7;&#x4EF6;&#x51FA;&#x73B0;&#xFF0C;&#x5E76;&#x83B7;&#x53D6;&#x63A7;&#x4EF6;</p>
+<pre><code>WebElement e = (new WebDriverWait(driver, 10)).until(new ExpectedCondition&lt;WebElement&gt;() {
+        @Override
+        public WebElement apply(WebDriver d) {
+            return d.findElement(By.id(&quot;&#x4E0A;&#x6D77;&quot;));
+        }
+    });
+</code></pre><p>5.&#x8F93;&#x5165;&#x4E2D;&#x6587;
+&#x9996;&#x5148;&#x8BBE;&#x7F6E;Capabilities</p>
+<pre><code>DesiredCapabilities capabilities = new DesiredCapabilities();
+//&#x8BA9;appium&#x652F;&#x6301;&#x8F93;&#x5165;&#x4E2D;&#x6587;
+capabilities.setCapability(&quot;unicodeKeyboard&quot;, &quot;True&quot;);
+capabilities.setCapability(&quot;resetKeyboard&quot;, &quot;True&quot;);
+</code></pre><p>&#x7136;&#x540E;&#x5728;&#x81EA;&#x52A8;&#x5316;case&#x4E2D;&#x8C03;&#x7528;</p>
+<pre><code>//&#x8F93;&#x5165;&#x4E2D;&#x6587;
+WebElement inputTextToSearch1 =     driver.findElement(By.id(&quot;com.dianping.v1:id/search_edit&quot;));
+inputTextToSearch1.sendKeys(&quot;&#x97E9;&#x81B3;&#x5BAB;&#x6599;&#x7406; &#x4E2D;&#x5C71;&#x516C;&#x56ED;&#x5E97;&quot;);
+</code></pre><p>6.&#x6ED1;&#x52A8;&#x5C4F;&#x5E55;&#xFF08;&#x6ED1;&#x52A8;&#x5230;&#x6700;&#x4E0A;&#x65B9;&#x3001;&#x6700;&#x4E0B;&#x65B9;&#xFF09;</p>
+<p>&#x6ED1;&#x52A8;&#x5230;&#x6700;&#x4E0A;&#x65B9;</p>
+<pre><code>/**
+  * This Method for swipe down
+  *
+  * @param driver
+  * @param during
+  */
+public static void swipeToDown(AppiumDriver driver, int during) {
+    int width = driver.manage().window().getSize().width;
+    int height = driver.manage().window().getSize().height;
+    driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, during);
+    // wait for page loading
+}
+</code></pre><p>&#x6ED1;&#x52A8;&#x5230;&#x6700;&#x4E0B;&#x65B9;</p>
+<pre><code>/**
+  * This Method for swipe up
+  *
+  * @param driver
+  * @param during
+   */
+public static void swipeToUp(AppiumDriver driver, int during) {
+    int width = driver.manage().window().getSize().width;
+    int height = driver.manage().window().getSize().height;
+    driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, during);
+    // wait for page loading
+}
+</code></pre><p>7.&#x622A;&#x5C4F;</p>
+<pre><code>/**
+  * &#x622A;&#x5C4F;
+  * @param driver
+  * @param desFilePath &#x5168;&#x8DEF;&#x5F84;&#xFF0C;&#x5982;/Users/horizon/Downloads/
+  */
+public static void takeScreenShot(AppiumDriver driver, String desFilePath) {
+    File screenShotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    try {
+        FileUtils.copyFile(screenShotFile,
+        new File(desFilePath + getCurrentDateTime() + &quot;.png&quot;));
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+public static String getCurrentDateTime() {
+    SimpleDateFormat df = new SimpleDateFormat(&quot;yyyyMMdd_HHmmss&quot;);// &#x8BBE;&#x7F6E;&#x65E5;&#x671F;&#x683C;&#x5F0F;
+    return df.format(new Date());
+}
+</code></pre><p>8.&#x7ED3;&#x679C;&#x6821;&#x9A8C;</p>
+<pre><code>//&#x65AD;&#x8A00;
+assertThat(el.getText(), equalTo(&quot;&#x4E0A;&#x6D77;&quot;));
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../../public/bequietlee/high_memory_analyze/high_memory_analyze.html" class="navigation navigation-prev " aria-label="Previous page: 记一次Android内存分析过程"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../../public/bigfootprint/Volley杂谈/Volley杂谈.html" class="navigation navigation-next " aria-label="Next page: Volley杂谈"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
