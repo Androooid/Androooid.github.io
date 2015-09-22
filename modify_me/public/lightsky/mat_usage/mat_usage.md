@@ -192,7 +192,6 @@ I
 所以有时候进行MAT分析还是需要一些经验，能够帮你更快更准确的定位。
 
 
-##
 
 ##实战二  集合使用率分析
 集合在开发中会经常使用到，如何选择合适的数据结构的集合，初始容量是多少（太小，可能导致频繁扩容），太大，又会开销跟多内存。当这些问题不是很明确时或者想查看集合的使用情况时，可以通过MAT来进行分析。
@@ -238,7 +237,6 @@ I
 
 ##Array等其它集合分析方法类似
 
-##
 ##实战四 通过OQL快速定位未使用的集合 ##
 
 ###1. 通过OQL查询empty并且未修改过的集合：
@@ -246,17 +244,16 @@ I
 类似的
 `select * from java.util.HashMap where size=0 and modCount=0`
 `select * from java.util.Hashtable where count=0 and modCount=0`
-##
+
 <img src="res/mat/empty_list_1.png" width="700" height="470"/>
 
-##
 ###2. Immediate dominators(查看引用者)
 <img src="res/mat/empty_list_3.png" width="700" height="330"/>
 
 ### 计算空集合的Retained Size值，查看浪费了多少内存
 <img src="res/mat/empty_list_2.png" width="700" height="320"/>
 
-##
+
 #四 LeakCanary － 强大的内存泄漏分析工具
 [LeakCanary](https://github.com/square/leakcanary)是square开源的内存泄漏排查项目，很强大，内部会帮你手动触发GC然后分析强引用的GC引用链。如果存在GC引用链，说明有内存泄漏，会在你的手机上弹出个提示框，并且会自动在你手机上创建一个App。记录了每一次内存泄漏的GC引用链，通过它可以直接定位到内存泄漏的未释放的对象。原理和通过MAT分析内存泄漏是一样的，只是它完全自动化，省去了很大一部分的工作量。强烈建议集成LeakCanary。LeakCanary肯定是无法取代强大的MAT，因为它只是只分析内存泄漏，从上面的实战中，我们可以看到，MAT的强大之处是可以对内存中的任何信息进行分析。所以掌握MAT也是非常有必要的。另外在之前用的LeakCanary中发现在解析Heap Dump内存快照的时候会出现问题，存在小bug。
 
